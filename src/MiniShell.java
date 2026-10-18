@@ -18,7 +18,14 @@ public class MiniShell {
             Process proceso1 = pb1.start();
             Process proceso2 = pb2.start();
 
-            System.out.println("Procesos iniciados");
+            ProcessHandle handle1 = proceso1.toHandle();
+            ProcessHandle handle2 = proceso2.toHandle();
+
+            System.out.println("PID 1: " + handle1.pid());
+            System.out.println("Activo 1: " + handle1.isAlive());
+
+            System.out.println("PID 2: " + handle2.pid());
+            System.out.println("Activo 2: " + handle2.isAlive());
 
         } catch (IOException e) {
             System.out.println("No se ha podido iniciar uno de los procesos.");
