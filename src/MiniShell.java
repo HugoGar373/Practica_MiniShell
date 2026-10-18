@@ -9,5 +9,8 @@ public class MiniShell {
 
         System.out.print("Segundo programa: ");
         String programa2 = teclado.nextLine();
+
+        ProcessBuilder pb1 = new ProcessBuilder(programa1);
+        ProcessBuilder pb2 = new ProcessBuilder(programa2);
     }
 }
