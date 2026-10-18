@@ -27,8 +27,16 @@ public class MiniShell {
             System.out.println("PID 2: " + handle2.pid());
             System.out.println("Activo 2: " + handle2.isAlive());
 
+            int codigo1 = proceso1.waitFor();
+            int codigo2 = proceso2.waitFor();
+
+            System.out.println("Código de salida 1: " + codigo1);
+            System.out.println("Código de salida 2: " + codigo2);
+
         } catch (IOException e) {
             System.out.println("No se ha podido iniciar uno de los procesos.");
+        } catch (InterruptedException e) {
+            System.out.println("La espera ha sido interrumpida.");
         }
     }
 }
